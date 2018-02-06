@@ -1,0 +1,244 @@
+from __future__ import print_function
+from protons import app
+from simtk import unit, openmm as mm
+from protons.app import ConstantPHCalibration, ForceFieldProtonDrive
+from protons.app import MetadataReporter, TitrationReporter, NCMCReporter, SAMSReporter
+import shutil
+import signal
+from protons.app.logger import log, logging
+import numpy as np
+from openmmtools.integrators import LangevinIntegrator, ExternalPerturbationLangevinIntegrator
+log.setLevel(logging.DEBUG)
+import os
+import netCDF4
+
+{% if integrator.class == "GBAOAB" %}
+number_R_steps = {{ integrator.number_R_steps|default(1) }}
+
+class ExternalGBAOABIntegrator(ExternalPerturbationLangevinIntegrator):
+    """
+    Implementation of the gBAOAB integrator which tracks external protocol work.
+
+    Parameters
+    ----------
+        number_R: int, default: 1
+            The number of sequential R steps.  For instance V R R O R R V has number_R = 2
+        temperature : simtk.unit.Quantity compatible with kelvin, default: 298*unit.kelvin
+           The temperature.
+        collision_rate : simtk.unit.Quantity compatible with 1/picoseconds, default: 1.0/unit.picoseconds
+           The collision rate.
+        timestep : simtk.unit.Quantity compatible with femtoseconds, default: 1.0*unit.femtoseconds
+           The integration timestep.
+
+
+    """
+
+    def __init__(self, number_R_steps=1, temperature=298.0 * unit.kelvin,
+                 collision_rate=1.0 / unit.picoseconds,
+                 timestep=1.0 * unit.femtoseconds,
+                 constraint_tolerance=1e-7
+                 ):
+        Rstep = " R" * number_R_steps
+
+        super(ExternalGBAOABIntegrator, self).__init__(splitting="V{0} O{0} V".format(Rstep),
+                                                       temperature=temperature,
+                                                       collision_rate=collision_rate,
+                                                       timestep=timestep,
+                                                       constraint_tolerance=constraint_tolerance,
+                                                       measure_shadow_work=False,
+                                                       measure_heat=False,
+                                                       )
+{% elif integrator.class == "VVVR" %}
+
+class VVVRIntegrator(ExternalPerturbationLangevinIntegrator):
+    """OVRVO  OBABO Integrator, more commonly known as VVVR."""
+    def __init__(self, temperature=298.0 * unit.kelvin,
+                 collision_rate=1.0 / unit.picoseconds,
+                 timestep=1.0 * unit.femtoseconds,
+                 constraint_tolerance=1e-7
+                 ):
+
+        super(VVVRIntegrator, self).__init__(splitting="O V R V O",
+                                             temperature=temperature,
+                                             collision_rate=collision_rate,
+                                             timestep=timestep,
+                                             constraint_tolerance=constraint_tolerance,
+                                             measure_shadow_work=False,
+                                             measure_heat=False,
+                                             )
+{% endif %}
+
+
+# Define what to do on timeout
+def timeout_handler(signum, frame):
+   log.warn("Script is running out of time. Attempting to exit cleanly.")
+   raise Exception("Running out of time, shutting down!")
+
+# Register the timeout handling
+signal.signal(signal.SIGALRM, timeout_handler)
+
+# naming the input files
+input_pdb_file = "{{ input.pdbfile }}"
+ligand_xml = "{{ input.ligandxml }}"
+
+# Naming the output files
+basename = "{{ output.basename|default(output) }}"
+name_netcdf = '%s.nc' % basename
+dcd_output_name = '%s.dcd' %basename
+weights_txt_name = '%s-weights.txt' % basename
+
+# Simulation settings
+ewaldErrorTolerance = {{ system.ewaldErrorTolerance|default('1.e-5') }}
+barostatInterval =  {{ system.barostatInterval|default('25') }}
+switching_distance = {{ system.switching_distance|default('0.85') }} * unit.nanometers
+nonbondedCutoff = {{ system.nonbondedCutoff|default('1.0') }} * unit.nanometers
+pressure = {{ system.pressure|default('1.0') }} * unit.atmosphere
+temperature = {{ system.temperature|default('300.0') }} * unit.kelvin
+
+# Integrator specific options
+timestep = {{ integrator.timestep|default('2.0') }} * unit.femtosecond
+constraint_tolerance = {{ integrator.constraint_tolerance|default('1.e-7') }}
+collision_rate = {{ integrator.collision_rate|default('1.0') }} / unit.picosecond
+
+# default of 20 ps of MD before starting the main loop
+num_thermalization_steps = {{ simulation.num_thermalization_steps|default('10000') }}
+steps_between_updates = {{ simulation.steps_between_updates|default('10000') }}
+
+# Driver update settings
+
+ # Number of attempts per protein update
+nattempts_protein = {{ driver.num_attempts_protein|default('5') }}
+ncmc_steps_per_trial = {{ driver.ncmc_steps_per_trial|default('1000') }}  # 20 ps / 20 fs
+prop_steps_per_trial = {{ driver.prop_per_step|default('10')}}
+total_iterations = {{ driver.total_iterations|default('10000') }}
+
+modulo_ligand_update = 1 # Update ligand every n iterations
+modulo_protein_update = 1 # Update protein every n iterations
+
+# Minimization
+pre_run_minimization_tolerance = 1e-5 * unit.kilojoule / unit.mole
+minimization_max_iterations = 0
+
+# SAMS settings
+beta_burnin = {{ sams.beta|default('0.5') }}
+flatness_criterion = {{ sams.flatness_criterion|default('0.15') }}
+
+# Loads standard residues so that the topology of the PDBx file will be interpreted correctly
+pdb_object = app.PDBFile(input_pdb_file)
+forcefield = app.ForceField('amber10-constph.xml', 'gaff.xml', ligand_xml, 'tip3p.xml', 'ions_tip3p.xml')
+
+# System Configuration
+nonbondedMethod = app.PME
+constraints = app.HBonds
+rigidWater = True
+
+# Script specific settings
+script_timeout = {{ script.timeout|default('428400') }} # 119 hours
+
+# Simulation Options
+
+platform = mm.Platform.getPlatformByName('CUDA')
+properties = {'CudaPrecision': 'mixed', 'DeterministicForces': 'true', 'CudaDeviceIndex': os.environ['CUDA_VISIBLE_DEVICES']}
+
+
+# Prepare the Simulation
+topology = pdb_object.topology
+positions = pdb_object.positions
+
+
+system = forcefield.createSystem(topology, nonbondedMethod=nonbondedMethod, constraints=constraints,
+                                 rigidWater=rigidWater, ewaldErrorTolerance=ewaldErrorTolerance, nonbondedCutoff=nonbondedCutoff)
+
+for force in system.getForces():
+    if isinstance(force, mm.NonbondedForce):
+        force.setUseSwitchingFunction(True)
+
+        force.setSwitchingDistance(switching_distance)
+
+system.addForce(
+    mm.MonteCarloBarostat(
+        pressure,
+        temperature,
+        barostatInterval))
+
+{% if integrator.class == "GBAOAB" %}
+integrator = ExternalGBAOABIntegrator(number_R_steps=number_R_steps, temperature=temperature, collision_rate=collision_rate, timestep=timestep, constraint_tolerance=constraint_tolerance)
+ncmc_propagation_integrator = ExternalGBAOABIntegrator(number_R_steps=number_R_steps, temperature=temperature, collision_rate=collision_rate, timestep=timestep, constraint_tolerance=constraint_tolerance)
+{% elif integrator.class == "VVVR" %}
+integrator = VVVRIntegrator(temperature=temperature, collision_rate=collision_rate, timestep=timestep, constraint_tolerance=constraint_tolerance)
+ncmc_propagation_integrator = VVVRIntegrator(temperature=temperature, collision_rate=collision_rate, timestep=timestep, constraint_tolerance=constraint_tolerance)
+{% endif %}
+
+compound_integrator = mm.CompoundIntegrator()
+compound_integrator.addIntegrator(integrator)
+compound_integrator.addIntegrator(ncmc_propagation_integrator)
+compound_integrator.setCurrentIntegrator(0)
+
+
+driver = ForceFieldProtonDrive(temperature, topology, system, forcefield, ['amber10-constph.xml', ligand_xml], pressure=pressure,
+                                       perturbations_per_trial=ncmc_steps_per_trial, propagations_per_step=prop_steps_per_trial)
+
+# Assumes ligand is always the last titration group
+ligand_titration_group_index = len(driver.titrationGroups) - 1
+
+pools = {
+{%- if simulation.type == "protein+ligand"  -%}
+    'protein_titratable_residues' : list(range(ligand_titration_group_index)),
+{%- endif -%}
+    'ligand' : [ligand_titration_group_index]}
+
+driver.define_pools(pools)
+
+# Initializing the weights using values from previous simulations
+g_initial = {'TYR': [0.0, 126.7],
+                 'AS4': [0.0, -63.2, -65.1, -63.1, -69.5],
+                 'GL4': [0.0, -33.8, -39.7, -36.1, -38.5],
+                 'HIP': [0.0, 27.5, 29.6],
+                 'CYS': [0.0, 154.4],
+                 'LYS': [0.0, -6.8]}
+driver.import_gk_values(g_initial)
+
+# Create SAMS sampler
+
+simulation = app.ConstantPHCalibration(topology, system, compound_integrator, driver, group_index=ligand_titration_group_index, platform=platform, platformProperties=properties)
+simulation.context.setPositions(positions)
+
+
+simulation.minimizeEnergy(tolerance=pre_run_minimization_tolerance, maxIterations=minimization_max_iterations)
+simulation.step(num_thermalization_steps)
+
+dcdreporter = app.DCDReporter(dcd_output_name, int(steps_between_updates/30))
+ncfile = netCDF4.Dataset(name_netcdf, "w")
+metdatarep = MetadataReporter(ncfile, shared=True)
+ncmcrep = NCMCReporter(ncfile,1,shared=True)
+titrep = TitrationReporter(ncfile,1,shared=True)
+samsrep = SAMSReporter(ncfile,1,shared=True)
+simulation.reporters.append(dcdreporter)
+simulation.update_reporters.append(metdatarep)
+simulation.update_reporters.append(ncmcrep)
+simulation.update_reporters.append(titrep)
+simulation.calibration_reporters.append(samsrep)
+
+
+# Run SAMS for a specified number of iterations
+
+# Raises an exception if the simulation runs out of time, so that the script can be killed cleanly from within python
+signal.alarm(script_timeout)
+
+try:
+    for i in range(total_iterations):
+
+        log.info("Iteration %i", i)
+        if i == 10:
+            log.info("Simulation seems to be working. Suppressing debugging info.")
+            log.setLevel(logging.INFO)
+        simulation.step(steps_between_updates)
+        {% if simulation.type == "protein+ligand"  %}
+        simulation.update(nattempts_protein, pool='protein_titratable_residues')
+        {% endif %}
+        simulation.update(1, pool='ligand')
+        simulation.adapt()
+    # Reset timer
+    signal.alarm(0)
+finally:
+    ncfile.close()

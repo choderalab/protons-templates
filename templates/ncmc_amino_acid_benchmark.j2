@@ -1,0 +1,234 @@
+{% extends "ncmc_benchmark_base.j2" %}
+{% block imports %}
+from __future__ import print_function
+from protons import app
+from simtk import unit, openmm as mm
+from protons.app import ConstantPHSimulation, AmberProtonDrive
+from protons.app import MetadataReporter, TitrationReporter, NCMCReporter
+import shutil
+import signal
+import json
+from protons.app.logger import log, logging
+import numpy as np
+from openmmtools.integrators import LangevinIntegrator, ExternalPerturbationLangevinIntegrator
+import os
+import netCDF4
+import saltswap
+log.setLevel(logging.INFO)
+
+{% endblock %}
+
+{% block benchmark_settings %}
+# Important benchmark settings 
+ncmc_steps_per_trial = {{ driver.ncmc_steps_per_trial }}  # number of 2 fs steps
+prop_steps_per_trial = {{ driver.prop_per_step|default('1')}}
+start_state = {{ simulation.state }}
+
+{% endblock %}
+
+{% block simulation_input %}
+# Input files
+input_inpcrd = "{{ input.inpcrd }}"
+input_prmtop = "{{ input.prmtop }}"
+
+# Load the PDB file and the forcefield files
+prmtop = app.AmberPrmtopFile(input_prmtop)
+inpcrd = app.AmberInpcrdFile(input_inpcrd)
+
+# Prepare the Simulation
+topology = prmtop.topology
+positions = inpcrd.positions
+
+# Quick fix for histidines in topology
+for residue in topology.residues():
+    if residue.name == 'HIS':
+        residue.name = 'HIP'
+{% endblock %}
+
+
+{% block simulation_output %}
+# Naming the output files
+basename = "{{ output.basename|default(output) }}"
+name_netcdf = '%s.nc' % basename
+# Uncomment below if trajectory desirable.
+# dcd_output_name = '%s.dcd' %basename
+{% endblock %}
+
+
+{# Generic settings for the simulation loops #}
+{% block dynamics_settings %}
+# Steps of MD before starting the main loop
+num_thermalization_steps = {{ simulation.num_thermalization_steps|default('1000') }}
+# Steps of MD in between MC moves
+steps_between_updates = {{ simulation.steps_between_updates|default('1000') }}
+{% endblock %}
+
+{# By default we're using CUDA #}
+{% block platform_settings %}
+# Platform Options
+platform = mm.Platform.getPlatformByName('CUDA')
+properties = {'CudaPrecision': 'mixed', 'DeterministicForces': 'true', 'CudaDeviceIndex': os.environ['CUDA_VISIBLE_DEVICES']}
+{% endblock %}
+
+{# Timestep, collision rate, constraints #}
+{% block integrator_settings %}
+# Integrator options
+timestep = {{ integrator.timestep|default('2.0') }} * unit.femtosecond
+constraint_tolerance = {{ integrator.constraint_tolerance|default('1.e-7') }}
+collision_rate = {{ integrator.collision_rate|default('1.0') }} / unit.picosecond
+{% endblock %}
+
+{# ProtonDrive settings #}
+{% block driver_settings %}
+total_iterations = {{ driver.total_iterations|default('5000') }}
+{% endblock %}
+
+{# Settings that affect pre-simulation minimization #}
+{% block minimization_settings %}
+pre_run_minimization_tolerance = 1e-5 * unit.kilojoule / unit.mole
+minimization_max_iterations = 0
+{% endblock %}
+
+{% block system_settings %}
+# System Configuration
+nonbondedMethod = app.PME
+constraints = app.HBonds
+rigidWater = True
+ewaldErrorTolerance = {{ system.ewaldErrorTolerance|default('1.e-5') }}
+barostatInterval =  {{ system.barostatInterval|default('25') }}
+switching_distance = {{ system.switching_distance|default('0.85') }} * unit.nanometers
+nonbondedCutoff = {{ system.nonbondedCutoff|default('1.0') }} * unit.nanometers
+pressure = {{ system.pressure|default('1.0') }} * unit.atmosphere
+temperature = {{ system.temperature|default('300.0') }} * unit.kelvin
+system = prmtop.createSystem(nonbondedMethod=nonbondedMethod, constraints=constraints, rigidWater=rigidWater, ewaldErrorTolerance=ewaldErrorTolerance, nonbondedCutoff=nonbondedCutoff)
+
+# Switching function needs tuning
+for force in system.getForces():
+    if isinstance(force, mm.NonbondedForce):
+        force.setUseSwitchingFunction(True)
+
+        force.setSwitchingDistance(switching_distance)
+
+# NPT simulation
+system.addForce(
+    mm.MonteCarloBarostat(
+        pressure,
+        temperature,
+        barostatInterval))
+
+{% endblock %}
+
+{# Reporters for logging simulation data to DCD (coordinates) and netcdf #}
+{% block reporters %}
+# Uncomment below if DCD trajectory desirable
+# dcdreporter = app.DCDReporter(dcd_output_name, int(steps_between_updates/30))
+
+ncfile = netCDF4.Dataset(name_netcdf, "w")
+# Only metadata, and NCMC protocol work is stored
+metdatarep = MetadataReporter(ncfile, shared=True)
+ncmcrep = NCMCReporter(ncfile,1,shared=True)
+
+simulation.update_reporters.append(metdatarep)
+simulation.update_reporters.append(ncmcrep)
+# Uncomment below if DCD trajectory desirable
+# simulation.reporters.append(dcdreporter)
+
+{% endblock %}
+
+{# Defines and uses gbaoab integrator in simulation #}
+{% block integrator_def %}
+number_R_steps = {{ integrator.number_R_steps|default(1) }}
+
+class ExternalGBAOABIntegrator(ExternalPerturbationLangevinIntegrator):
+    """
+    Implementation of the gBAOAB integrator which tracks external protocol work.
+
+    Parameters
+    ----------
+        number_R: int, default: 1
+            The number of sequential R steps.  For instance V R R O R R V has number_R = 2
+        temperature : simtk.unit.Quantity compatible with kelvin, default: 298*unit.kelvin
+           The temperature.
+        collision_rate : simtk.unit.Quantity compatible with 1/picoseconds, default: 1.0/unit.picoseconds
+           The collision rate.
+        timestep : simtk.unit.Quantity compatible with femtoseconds, default: 1.0*unit.femtoseconds
+           The integration timestep.
+
+
+    """
+
+    def __init__(self, number_R_steps=1, temperature=298.0 * unit.kelvin,
+                 collision_rate=1.0 / unit.picoseconds,
+                 timestep=1.0 * unit.femtoseconds,
+                 constraint_tolerance=1e-7
+                 ):
+        Rstep = " R" * number_R_steps
+
+        super(ExternalGBAOABIntegrator, self).__init__(splitting="V{0} O{0} V".format(Rstep),
+                                                       temperature=temperature,
+                                                       collision_rate=collision_rate,
+                                                       timestep=timestep,
+                                                       constraint_tolerance=constraint_tolerance,
+                                                       measure_shadow_work=False,
+                                                       measure_heat=False,
+                                                       )
+{% endblock %}
+
+{# Defines a new protondrive from forcefield, system and topology #}
+{% block new_drive %}
+
+driver = ForceFieldProtonDrive(temperature, topology, system, forcefield, ['amber10-constph.xml', ligand_xml], pressure=pressure,
+                                       perturbations_per_trial=ncmc_steps_per_trial, propagations_per_step=prop_steps_per_trial)
+
+# force reject, because we only want to accumulate work starting in one state 
+driver._accept_reject = lambda logp_accept: False
+driver.adjust_to_ph(7.4)
+{% endblock %}
+
+{# Instantiate a GBAOAB integrator for simulation #}
+{% block integrator_init %}
+
+integrator = ExternalGBAOABIntegrator(number_R_steps=number_R_steps, temperature=temperature, collision_rate=collision_rate, timestep=timestep, constraint_tolerance=constraint_tolerance)
+ncmc_propagation_integrator = ExternalGBAOABIntegrator(number_R_steps=number_R_steps, temperature=temperature, collision_rate=collision_rate, timestep=timestep, constraint_tolerance=constraint_tolerance)
+
+# Define a compound integrator
+compound_integrator = mm.CompoundIntegrator()
+compound_integrator.addIntegrator(integrator)
+compound_integrator.addIntegrator(ncmc_propagation_integrator)
+compound_integrator.setCurrentIntegrator(0)
+{% endblock %}
+
+{# Define a new ConstantPHCalibration run#}
+{% block start_simulation %}
+simulation = app.ConstantPHSimulation(topology, system, compound_integrator, driver, group_index=ligand_titration_group_index, platform=platform, platformProperties=properties)
+simulation.context.setPositions(positions)
+
+# Set the titration state of the benchmark residue
+simulation.driver.titrationGroups[0].state = start_state
+# Update parameters
+simulation.driver._set_titration_state(0, start_state, updateParameters=True)
+
+
+{% endblock %}
+{% block saltswap %}
+# The salinator initializes the system salts to serum NaCl concentration
+salinator = Salinator(context=simulation.context, system=system, topology=topology,
+                              ncmc_integrator=compound_integrator.getIntegrator(1), salt_concentration=0.154 * unit.molar,
+                              pressure=testsystem.pressure, temperature=testsystem.temperature)
+salinator.neutralize()
+salinator.initialize_concentration()
+swapper = salinator.swapper
+simulation.driver.attach_swapper(swapper)
+simulation.minimizeEnergy(tolerance=pre_run_minimization_tolerance, maxIterations=minimization_max_iterations)
+simulation.step(num_thermalization_steps)
+{% endblock %}
+
+{# Main simulation loop #}
+{% block inner_loop %}
+        log.info("Iteration %i", i)
+        if i == 5:
+            log.info("Simulation seems to be working. Suppressing debugging info.")
+            log.setLevel(logging.INFO)
+        simulation.step(steps_between_updates)                
+        simulation.update(1)
+{% endblock %}

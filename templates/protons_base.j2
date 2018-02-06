@@ -1,0 +1,85 @@
+{% block imports %}
+{# This contains all necessary import statements #}
+{% endblock %}
+{% block timeout_handlers %}
+{# Default handling of timeouts #}
+# Define what to do on timeout
+class TimeOutError(RuntimeError):
+    """This error is raised when an operation is taking longer than expected."""
+    pass
+
+def timeout_handler(signum, frame):
+   log.warn("Script is running out of time. Attempting to exit cleanly.")
+   raise TimeOutError("Running out of time, shutting down!")
+
+# Register the timeout handling
+signal.signal(signal.SIGALRM, timeout_handler)
+{% endblock %}
+{# Is this script resuming from a previous simulation ? #}
+{% if script.resume %}
+{% block serialization_functions %}{# Functions that serialize drive, state, and calibration properties #}{% endblock %}
+{% endif %}
+{% block simulation_input %}{# Input files for this simulation #}{% endblock %}
+{# Is this script resuming from a previous simulation ? #}
+{% if script.resume %}
+{% block resume_files %}{# Filenames for simulation resumption #}{% endblock %}
+{% endif %}
+{% block simulation_output %}{# Naming of output files #}{% endblock %}
+{% block integrator_settings %}{# Integratior settings such as timestep, collision rate #}{% endblock %}
+{% block integrator_def %}{# Contains a GBAOAB custom integrator definition #}{% endblock %}
+{% block dynamics_settings %}{# How many MD steps before start of MC, and between MC moves. #}{% endblock %}
+{% block driver_settings %}{# Settings for the proton drive #}{% endblock %}
+{% block minimization_settings %}{# Settings that affect pre-simulation minimization #}{% endblock %}
+{% block sams_settings %}{# Settings specific to sams calibrations #}{% endblock %}
+{# Time before script gracefully exits #}
+# Script specific settings
+script_timeout = {{ script.timeout|default('428400') }} # 119 hours
+
+{% block platform_settings %}{# Settings that define the platform, and its properties #}{% endblock %}
+{% block system_settings %}{# Sets up an openmm System object and adds barostats & sets switching distance#}
+{# Defines settings such as temperature, pressure #}{% endblock %}
+{% block integrator_init %}{# Instantiate a GBAOAB customintegrator #}{% endblock %}
+{% if script.resume %}
+{% block resume_drive %}{# Defines an NCMCProtonDrive using serialized xml input #}{% endblock %}    
+{% else %}
+{% block new_drive %}{# Defines a new protondrive from forcefield, system and topology #}{% endblock %}
+{% endif %}
+# Assumes ligand is always the last titration group
+ligand_titration_group_index = len(driver.titrationGroups) - 1
+
+{% block def_pools %}{# Define the different pools in the driver #}{% endblock %}
+# Create SAMS sampler
+{% if script.resume %}
+{% block resume_sams %}{# Define a ConstantPHCalibration from a previous run, requires JSON input #}{% endblock %}
+{% else %}
+{% block start_sams %}{# Start a new ConstantPHCalibration #}{% endblock %}
+{% endif %}
+
+{% block reporters %}{# Reporters for generic constant-pH simulation #}{% endblock %}
+{% block calibration_reporters %}{# Reporters for SAMS calibrations #}{% endblock %}
+
+# Raises an exception if the simulation runs out of time, so that the script can be killed cleanly from within python
+signal.alarm(script_timeout)
+
+try:
+    for i in range(total_iterations):
+{% block inner_loop %}
+        {# The main simulation, calibration loop, needs indent of two #}
+{% endblock %}
+    # Reset timer
+    signal.alarm(0)
+
+except TimeOutError:
+    log.warn("Simulation ran out of time, saving current results.")
+
+finally:
+    # export the context
+    serialize_state(simulation.context,output_context_xml)
+    # export the driver
+    serialize_drive(simulation.drive, output_drive_xml)
+    # export the calibration status
+    serialize_sams_status(simulation, output_calibration_json)
+
+    ncfile.close()
+
+# End of script
