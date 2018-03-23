@@ -164,9 +164,7 @@ def main(jsonfile):
     prop_steps_per_trial = int(ncmc["propagations_per_step"])
     total_iterations = int(prms["total_attempts"])
 
-    modulo_ligand_update = 1 # Update ligand every n iterations
-
-    # settings form minimization
+    # settings for minimization
     minimization = prms["minimization"]
     pre_run_minimization_tolerance = float(minimization["tolerance_kjmol"]) * unit.kilojoule / unit.mole
     minimization_max_iterations = int(minimization["max_iterations"])
@@ -229,14 +227,14 @@ def main(jsonfile):
         driver = ForceFieldProtonDrive(temperature, topology, system, forcefield, ['amber10-constph.xml'], pressure=pressure,
                                            perturbations_per_trial=ncmc_steps_per_trial, propagations_per_step=prop_steps_per_trial)
     
-    # Assumes ligand is always the last titration group
-    ligand_titration_group_index = len(driver.titrationGroups) - 1
+    # Assumes calibration residue is always the last titration group
+    calibration_titration_group_index = len(driver.titrationGroups) - 1
 
     # Define residue pools
-    pools = {'ligand' : [ligand_titration_group_index]}
+    pools = {'calibration' : [calibration_titration_group_index]}
     driver.define_pools(pools)
     # Create SAMS sampler
-    simulation = app.ConstantPHCalibration(topology, system, compound_integrator, driver, group_index=ligand_titration_group_index, platform=platform, platformProperties=properties, samsProperties=sams)
+    simulation = app.ConstantPHCalibration(topology, system, compound_integrator, driver, group_index=calibration_titration_group_index, platform=platform, platformProperties=properties, samsProperties=sams)
     simulation.context.setPositions(positions)
     salinator = Salinator(context=simulation.context,
                             system=system,
@@ -277,7 +275,7 @@ def main(jsonfile):
                 log.info("Simulation seems to be working. Suppressing debugging info.")
                 log.setLevel(logging.INFO)
             simulation.step(steps_between_updates)
-            simulation.update(1, pool='ligand')
+            simulation.update(1, pool='calibration')
             simulation.adapt()
         # Reset timer
         signal.alarm(0)
