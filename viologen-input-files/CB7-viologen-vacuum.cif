@@ -1,0 +1,439 @@
+data_cell
+# Created with OpenMM 7.2.1, 2018-05-22
+#
+_cell.length_a        40.0000
+_cell.length_b        40.0000
+_cell.length_c        40.0000
+_cell.angle_alpha     90.0000
+_cell.angle_beta      90.0000
+_cell.angle_gamma     90.0000
+#
+loop_
+_struct_conn.id
+_struct_conn.conn_type_id
+_struct_conn.ptnr1_label_asym_id
+_struct_conn.ptnr1_label_comp_id
+_struct_conn.ptnr1_label_seq_id
+_struct_conn.ptnr1_label_atom_id
+_struct_conn.ptnr2_label_asym_id
+_struct_conn.ptnr2_label_comp_id
+_struct_conn.ptnr2_label_seq_id
+_struct_conn.ptnr2_label_atom_id
+bond1 covale A VIO      1 O1   A VIO      1 C2  
+bond2 covale A VIO      1 O1   A VIO      1 H29 
+bond3 covale A VIO      1 C2   A VIO      1 O3  
+bond4 covale A VIO      1 C2   A VIO      1 C4  
+bond5 covale A VIO      1 C4   A VIO      1 C5  
+bond6 covale A VIO      1 C4   A VIO      1 H1  
+bond7 covale A VIO      1 C4   A VIO      1 H2  
+bond8 covale A VIO      1 C5   A VIO      1 C6  
+bond9 covale A VIO      1 C5   A VIO      1 H3  
+bond10 covale A VIO      1 C5   A VIO      1 H4  
+bond11 covale A VIO      1 C6   A VIO      1 C7  
+bond12 covale A VIO      1 C6   A VIO      1 H5  
+bond13 covale A VIO      1 C6   A VIO      1 H6  
+bond14 covale A VIO      1 C7   A VIO      1 C8  
+bond15 covale A VIO      1 C7   A VIO      1 H7  
+bond16 covale A VIO      1 C7   A VIO      1 H8  
+bond17 covale A VIO      1 C8   A VIO      1 N9  
+bond18 covale A VIO      1 C8   A VIO      1 H9  
+bond19 covale A VIO      1 C8   A VIO      1 H10 
+bond20 covale A VIO      1 N9   A VIO      1 C10 
+bond21 covale A VIO      1 N9   A VIO      1 C12 
+bond22 covale A VIO      1 C10  A VIO      1 C11 
+bond23 covale A VIO      1 C10  A VIO      1 H11 
+bond24 covale A VIO      1 C11  A VIO      1 C14 
+bond25 covale A VIO      1 C11  A VIO      1 H12 
+bond26 covale A VIO      1 C12  A VIO      1 C13 
+bond27 covale A VIO      1 C12  A VIO      1 H13 
+bond28 covale A VIO      1 C13  A VIO      1 C14 
+bond29 covale A VIO      1 C13  A VIO      1 H14 
+bond30 covale A VIO      1 C14  A VIO      1 C15 
+bond31 covale A VIO      1 C15  A VIO      1 C16 
+bond32 covale A VIO      1 C15  A VIO      1 C20 
+bond33 covale A VIO      1 C16  A VIO      1 C17 
+bond34 covale A VIO      1 C16  A VIO      1 H15 
+bond35 covale A VIO      1 C17  A VIO      1 N18 
+bond36 covale A VIO      1 C17  A VIO      1 H16 
+bond37 covale A VIO      1 N18  A VIO      1 C19 
+bond38 covale A VIO      1 N18  A VIO      1 C21 
+bond39 covale A VIO      1 C19  A VIO      1 C20 
+bond40 covale A VIO      1 C19  A VIO      1 H17 
+bond41 covale A VIO      1 C20  A VIO      1 H18 
+bond42 covale A VIO      1 C21  A VIO      1 C22 
+bond43 covale A VIO      1 C21  A VIO      1 H19 
+bond44 covale A VIO      1 C21  A VIO      1 H20 
+bond45 covale A VIO      1 C22  A VIO      1 C23 
+bond46 covale A VIO      1 C22  A VIO      1 H21 
+bond47 covale A VIO      1 C22  A VIO      1 H22 
+bond48 covale A VIO      1 C23  A VIO      1 C24 
+bond49 covale A VIO      1 C23  A VIO      1 H23 
+bond50 covale A VIO      1 C23  A VIO      1 H24 
+bond51 covale A VIO      1 C24  A VIO      1 C25 
+bond52 covale A VIO      1 C24  A VIO      1 H25 
+bond53 covale A VIO      1 C24  A VIO      1 H26 
+bond54 covale A VIO      1 C25  A VIO      1 C26 
+bond55 covale A VIO      1 C25  A VIO      1 H27 
+bond56 covale A VIO      1 C25  A VIO      1 H28 
+bond57 covale A VIO      1 C26  A VIO      1 O27 
+bond58 covale A VIO      1 C26  A VIO      1 O28 
+bond59 covale A VIO      1 O28  A VIO      1 H30 
+bond60 covale A CB7      2 C1   A CB7      2 N1  
+bond61 covale A CB7      2 C1   A CB7      2 C2  
+bond62 covale A CB7      2 C1   A CB7      2 N2  
+bond63 covale A CB7      2 C1   A CB7      2 H1  
+bond64 covale A CB7      2 N1   A CB7      2 C4  
+bond65 covale A CB7      2 N1   A CB7      2 C5  
+bond66 covale A CB7      2 O1   A CB7      2 C5  
+bond67 covale A CB7      2 C2   A CB7      2 N3  
+bond68 covale A CB7      2 C2   A CB7      2 N4  
+bond69 covale A CB7      2 C2   A CB7      2 H2  
+bond70 covale A CB7      2 N2   A CB7      2 C7  
+bond71 covale A CB7      2 N2   A CB7      2 C8  
+bond72 covale A CB7      2 O2   A CB7      2 C8  
+bond73 covale A CB7      2 C3   A CB7      2 N3  
+bond74 covale A CB7      2 C3   A CB7      2 N5  
+bond75 covale A CB7      2 C3   A CB7      2 H3  
+bond76 covale A CB7      2 C3   A CB7      2 H4  
+bond77 covale A CB7      2 N3   A CB7      2 C5  
+bond78 covale A CB7      2 O3   A CB7      2 C11 
+bond79 covale A CB7      2 C4   A CB7      2 N11 
+bond80 covale A CB7      2 C4   A CB7      2 H5  
+bond81 covale A CB7      2 C4   A CB7      2 H6  
+bond82 covale A CB7      2 N4   A CB7      2 C6  
+bond83 covale A CB7      2 N4   A CB7      2 C8  
+bond84 covale A CB7      2 O4   A CB7      2 C10 
+bond85 covale A CB7      2 N5   A CB7      2 C9  
+bond86 covale A CB7      2 N5   A CB7      2 C10 
+bond87 covale A CB7      2 O5   A CB7      2 C16 
+bond88 covale A CB7      2 C6   A CB7      2 N6  
+bond89 covale A CB7      2 C6   A CB7      2 H7  
+bond90 covale A CB7      2 C6   A CB7      2 H8  
+bond91 covale A CB7      2 N6   A CB7      2 C9  
+bond92 covale A CB7      2 N6   A CB7      2 C11 
+bond93 covale A CB7      2 O6   A CB7      2 C17 
+bond94 covale A CB7      2 C7   A CB7      2 N12 
+bond95 covale A CB7      2 C7   A CB7      2 H9  
+bond96 covale A CB7      2 C7   A CB7      2 H10 
+bond97 covale A CB7      2 N7   A CB7      2 C11 
+bond98 covale A CB7      2 N7   A CB7      2 C12 
+bond99 covale A CB7      2 N7   A CB7      2 C13 
+bond100 covale A CB7      2 O7   A CB7      2 C21 
+bond101 covale A CB7      2 N8   A CB7      2 C10 
+bond102 covale A CB7      2 N8   A CB7      2 C12 
+bond103 covale A CB7      2 N8   A CB7      2 C14 
+bond104 covale A CB7      2 O8   A CB7      2 C20 
+bond105 covale A CB7      2 C9   A CB7      2 C12 
+bond106 covale A CB7      2 C9   A CB7      2 H11 
+bond107 covale A CB7      2 N9   A CB7      2 C14 
+bond108 covale A CB7      2 N9   A CB7      2 C15 
+bond109 covale A CB7      2 N9   A CB7      2 C17 
+bond110 covale A CB7      2 O9   A CB7      2 C25 
+bond111 covale A CB7      2 N10  A CB7      2 C13 
+bond112 covale A CB7      2 N10  A CB7      2 C15 
+bond113 covale A CB7      2 N10  A CB7      2 C16 
+bond114 covale A CB7      2 O10  A CB7      2 C23 
+bond115 covale A CB7      2 N11  A CB7      2 C19 
+bond116 covale A CB7      2 N11  A CB7      2 C20 
+bond117 covale A CB7      2 O11  A CB7      2 C31 
+bond118 covale A CB7      2 C12  A CB7      2 H12 
+bond119 covale A CB7      2 N12  A CB7      2 C19 
+bond120 covale A CB7      2 N12  A CB7      2 C21 
+bond121 covale A CB7      2 O12  A CB7      2 C29 
+bond122 covale A CB7      2 C13  A CB7      2 H13 
+bond123 covale A CB7      2 C13  A CB7      2 H14 
+bond124 covale A CB7      2 N13  A CB7      2 C16 
+bond125 covale A CB7      2 N13  A CB7      2 C18 
+bond126 covale A CB7      2 N13  A CB7      2 C42 
+bond127 covale A CB7      2 O13  A CB7      2 C37 
+bond128 covale A CB7      2 C14  A CB7      2 H15 
+bond129 covale A CB7      2 C14  A CB7      2 H16 
+bond130 covale A CB7      2 N14  A CB7      2 C17 
+bond131 covale A CB7      2 N14  A CB7      2 C18 
+bond132 covale A CB7      2 N14  A CB7      2 C41 
+bond133 covale A CB7      2 O14  A CB7      2 C35 
+bond134 covale A CB7      2 C15  A CB7      2 C18 
+bond135 covale A CB7      2 C15  A CB7      2 H17 
+bond136 covale A CB7      2 N15  A CB7      2 C21 
+bond137 covale A CB7      2 N15  A CB7      2 C22 
+bond138 covale A CB7      2 N15  A CB7      2 C39 
+bond139 covale A CB7      2 N16  A CB7      2 C20 
+bond140 covale A CB7      2 N16  A CB7      2 C22 
+bond141 covale A CB7      2 N16  A CB7      2 C40 
+bond142 covale A CB7      2 N17  A CB7      2 C23 
+bond143 covale A CB7      2 N17  A CB7      2 C24 
+bond144 covale A CB7      2 N17  A CB7      2 C39 
+bond145 covale A CB7      2 C18  A CB7      2 H18 
+bond146 covale A CB7      2 N18  A CB7      2 C24 
+bond147 covale A CB7      2 N18  A CB7      2 C25 
+bond148 covale A CB7      2 N18  A CB7      2 C40 
+bond149 covale A CB7      2 C19  A CB7      2 C22 
+bond150 covale A CB7      2 C19  A CB7      2 H19 
+bond151 covale A CB7      2 N19  A CB7      2 C25 
+bond152 covale A CB7      2 N19  A CB7      2 C26 
+bond153 covale A CB7      2 N19  A CB7      2 C27 
+bond154 covale A CB7      2 N20  A CB7      2 C23 
+bond155 covale A CB7      2 N20  A CB7      2 C27 
+bond156 covale A CB7      2 N20  A CB7      2 C28 
+bond157 covale A CB7      2 N21  A CB7      2 C26 
+bond158 covale A CB7      2 N21  A CB7      2 C29 
+bond159 covale A CB7      2 N21  A CB7      2 C30 
+bond160 covale A CB7      2 C22  A CB7      2 H20 
+bond161 covale A CB7      2 N22  A CB7      2 C28 
+bond162 covale A CB7      2 N22  A CB7      2 C30 
+bond163 covale A CB7      2 N22  A CB7      2 C31 
+bond164 covale A CB7      2 N23  A CB7      2 C31 
+bond165 covale A CB7      2 N23  A CB7      2 C32 
+bond166 covale A CB7      2 N23  A CB7      2 C34 
+bond167 covale A CB7      2 C24  A CB7      2 C27 
+bond168 covale A CB7      2 C24  A CB7      2 H21 
+bond169 covale A CB7      2 N24  A CB7      2 C29 
+bond170 covale A CB7      2 N24  A CB7      2 C33 
+bond171 covale A CB7      2 N24  A CB7      2 C34 
+bond172 covale A CB7      2 N25  A CB7      2 C33 
+bond173 covale A CB7      2 N25  A CB7      2 C35 
+bond174 covale A CB7      2 N25  A CB7      2 C36 
+bond175 covale A CB7      2 C26  A CB7      2 H22 
+bond176 covale A CB7      2 C26  A CB7      2 H23 
+bond177 covale A CB7      2 N26  A CB7      2 C32 
+bond178 covale A CB7      2 N26  A CB7      2 C36 
+bond179 covale A CB7      2 N26  A CB7      2 C37 
+bond180 covale A CB7      2 C27  A CB7      2 H24 
+bond181 covale A CB7      2 N27  A CB7      2 C37 
+bond182 covale A CB7      2 N27  A CB7      2 C38 
+bond183 covale A CB7      2 N27  A CB7      2 C42 
+bond184 covale A CB7      2 C28  A CB7      2 H25 
+bond185 covale A CB7      2 C28  A CB7      2 H26 
+bond186 covale A CB7      2 N28  A CB7      2 C35 
+bond187 covale A CB7      2 N28  A CB7      2 C38 
+bond188 covale A CB7      2 N28  A CB7      2 C41 
+bond189 covale A CB7      2 C30  A CB7      2 C34 
+bond190 covale A CB7      2 C30  A CB7      2 H27 
+bond191 covale A CB7      2 C32  A CB7      2 H28 
+bond192 covale A CB7      2 C32  A CB7      2 H29 
+bond193 covale A CB7      2 C33  A CB7      2 H30 
+bond194 covale A CB7      2 C33  A CB7      2 H31 
+bond195 covale A CB7      2 C34  A CB7      2 H32 
+bond196 covale A CB7      2 C36  A CB7      2 C38 
+bond197 covale A CB7      2 C36  A CB7      2 H33 
+bond198 covale A CB7      2 C38  A CB7      2 H34 
+bond199 covale A CB7      2 C39  A CB7      2 H35 
+bond200 covale A CB7      2 C39  A CB7      2 H36 
+bond201 covale A CB7      2 C40  A CB7      2 H37 
+bond202 covale A CB7      2 C40  A CB7      2 H38 
+bond203 covale A CB7      2 C41  A CB7      2 H39 
+bond204 covale A CB7      2 C41  A CB7      2 H40 
+bond205 covale A CB7      2 C42  A CB7      2 H41 
+bond206 covale A CB7      2 C42  A CB7      2 H42 
+#
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_alt_id
+_atom_site.label_comp_id
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.label_seq_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.Cartn_x_esd
+_atom_site.Cartn_y_esd
+_atom_site.Cartn_z_esd
+_atom_site.occupancy_esd
+_atom_site.B_iso_or_equiv_esd
+_atom_site.pdbx_formal_charge
+_atom_site.auth_seq_id
+_atom_site.auth_comp_id
+_atom_site.auth_asym_id
+_atom_site.auth_atom_id
+_atom_site.pdbx_PDB_model_num
+ATOM      1 O   O1   . VIO  A ?     1 .   -31.9260    12.6290    12.1910  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   O1     1
+ATOM      2 C   C2   . VIO  A ?     1 .   -31.0750    12.1370    12.8460  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C2     1
+ATOM      3 O   O3   . VIO  A ?     1 .   -30.9850    12.0720    14.0370  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   O3     1
+ATOM      4 C   C4   . VIO  A ?     1 .   -30.0670    11.2690    12.1000  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C4     1
+ATOM      5 C   C5   . VIO  A ?     1 .   -28.6600    11.9650    11.9380  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C5     1
+ATOM      6 C   C6   . VIO  A ?     1 .   -27.7760    11.0940    11.0180  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C6     1
+ATOM      7 C   C7   . VIO  A ?     1 .   -26.2830    11.3850    11.1520  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C7     1
+ATOM      8 C   C8   . VIO  A ?     1 .   -25.5040    10.5690    10.1170  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C8     1
+ATOM      9 N   N9   . VIO  A ?     1 .   -24.1310    10.9830     9.9370  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   N9     1
+ATOM     10 C   C10  . VIO  A ?     1 .   -23.0920    10.0790    10.0530  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C10     1
+ATOM     11 C   C11  . VIO  A ?     1 .   -21.7680    10.4950     9.8670  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C11     1
+ATOM     12 C   C12  . VIO  A ?     1 .   -23.8840    12.3230     9.6320  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C12     1
+ATOM     13 C   C13  . VIO  A ?     1 .   -22.6450    12.7470     9.3800  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C13     1
+ATOM     14 C   C14  . VIO  A ?     1 .   -21.4920    11.8660     9.4890  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C14     1
+ATOM     15 C   C15  . VIO  A ?     1 .   -20.1850    12.2850     9.2480  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C15     1
+ATOM     16 C   C16  . VIO  A ?     1 .   -19.8830    13.6290     8.9170  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C16     1
+ATOM     17 C   C17  . VIO  A ?     1 .   -18.6050    14.0200     8.5540  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C17     1
+ATOM     18 N   N18  . VIO  A ?     1 .   -17.5710    13.1670     8.8930  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  N18     1
+ATOM     19 C   C19  . VIO  A ?     1 .   -17.7720    11.7790     8.9620  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C19     1
+ATOM     20 C   C20  . VIO  A ?     1 .   -19.0800    11.3370     9.1970  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C20     1
+ATOM     21 C   C21  . VIO  A ?     1 .   -16.2140    13.6270     8.7200  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C21     1
+ATOM     22 C   C22  . VIO  A ?     1 .   -15.7690    14.7250     9.6280  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C22     1
+ATOM     23 C   C23  . VIO  A ?     1 .   -14.5390    15.4170     9.0310  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C23     1
+ATOM     24 C   C24  . VIO  A ?     1 .   -14.5480    16.9100     9.3620  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C24     1
+ATOM     25 C   C25  . VIO  A ?     1 .   -13.1640    17.5070     8.9990  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C25     1
+ATOM     26 C   C26  . VIO  A ?     1 .   -13.0850    18.9950     9.2070  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C26     1
+ATOM     27 O   O27  . VIO  A ?     1 .   -12.9880    19.6880     8.2190  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  O27     1
+ATOM     28 O   O28  . VIO  A ?     1 .   -13.2100    19.3820    10.3730  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  O28     1
+ATOM     29 H   H1   . VIO  A ?     1 .   -30.6020    11.0170    11.1760  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H1     1
+ATOM     30 H   H2   . VIO  A ?     1 .   -29.9730    10.2720    12.5490  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H2     1
+ATOM     31 H   H3   . VIO  A ?     1 .   -28.1980    12.1460    12.9160  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H3     1
+ATOM     32 H   H4   . VIO  A ?     1 .   -28.8190    12.9200    11.4230  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H4     1
+ATOM     33 H   H5   . VIO  A ?     1 .   -28.0390    11.2080     9.9590  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H5     1
+ATOM     34 H   H6   . VIO  A ?     1 .   -27.9630    10.0460    11.2820  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H6     1
+ATOM     35 H   H7   . VIO  A ?     1 .   -25.9380    11.1910    12.1750  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H7     1
+ATOM     36 H   H8   . VIO  A ?     1 .   -26.1310    12.4690    11.0750  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H8     1
+ATOM     37 H   H9   . VIO  A ?     1 .   -25.4560     9.5060    10.3810  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H9     1
+ATOM     38 H   H10  . VIO  A ?     1 .   -26.0640    10.7060     9.1830  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H10     1
+ATOM     39 H   H11  . VIO  A ?     1 .   -23.3250     9.0240    10.1040  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H11     1
+ATOM     40 H   H12  . VIO  A ?     1 .   -21.0480     9.7020    10.0390  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H12     1
+ATOM     41 H   H13  . VIO  A ?     1 .   -24.7380    12.9870     9.6060  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H13     1
+ATOM     42 H   H14  . VIO  A ?     1 .   -22.5620    13.8110     9.1940  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H14     1
+ATOM     43 H   H15  . VIO  A ?     1 .   -20.6360    14.3870     8.7330  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H15     1
+ATOM     44 H   H16  . VIO  A ?     1 .   -18.3320    14.9840     8.1460  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H16     1
+ATOM     45 H   H17  . VIO  A ?     1 .   -16.9010    11.1390     9.0150  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H17     1
+ATOM     46 H   H18  . VIO  A ?     1 .   -19.1470    10.2760     9.4110  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H18     1
+ATOM     47 H   H19  . VIO  A ?     1 .   -16.1400    13.9500     7.6750  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H19     1
+ATOM     48 H   H20  . VIO  A ?     1 .   -15.5260    12.7890     8.8820  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H20     1
+ATOM     49 H   H21  . VIO  A ?     1 .   -16.5950    15.4140     9.8400  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H21     1
+ATOM     50 H   H22  . VIO  A ?     1 .   -15.4720    14.3160    10.6020  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H22     1
+ATOM     51 H   H23  . VIO  A ?     1 .   -14.4890    15.3370     7.9380  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H23     1
+ATOM     52 H   H24  . VIO  A ?     1 .   -13.5940    15.0400     9.4410  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H24     1
+ATOM     53 H   H25  . VIO  A ?     1 .   -14.6610    17.1320    10.4300  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H25     1
+ATOM     54 H   H26  . VIO  A ?     1 .   -15.2900    17.4120     8.7290  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H26     1
+ATOM     55 H   H27  . VIO  A ?     1 .   -12.8960    17.3130     7.9530  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H27     1
+ATOM     56 H   H28  . VIO  A ?     1 .   -12.3420    16.9890     9.5080  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H28     1
+ATOM     57 H   H29  . VIO  A ?     1 .   -31.5530    13.5200    12.3620  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H29     1
+ATOM     58 H   H30  . VIO  A ?     1 .   -12.3330    18.9760    10.2050  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H30     1
+ATOM     59 C   C1   . CB7  A ?     2 .   -22.8390    16.3510     6.0570  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C1     1
+ATOM     60 N   N1   . CB7  A ?     2 .   -23.7310    15.7570     7.0490  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N1     1
+ATOM     61 O   O1   . CB7  A ?     2 .   -24.7820    13.7720     7.3070  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O1     1
+ATOM     62 C   C2   . CB7  A ?     2 .   -22.6270    15.2380     5.0090  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C2     1
+ATOM     63 N   N2   . CB7  A ?     2 .   -21.4660    16.6550     6.4770  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N2     1
+ATOM     64 O   O2   . CB7  A ?     2 .   -19.3200    15.9080     6.0030  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O2     1
+ATOM     65 C   C3   . CB7  A ?     2 .   -23.7800    13.0090     4.7200  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C3     1
+ATOM     66 N   N3   . CB7  A ?     2 .   -23.3850    14.1180     5.5430  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N3     1
+ATOM     67 O   O3   . CB7  A ?     2 .   -18.3690    12.6360     4.6810  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O3     1
+ATOM     68 C   C4   . CB7  A ?     2 .   -24.5450    16.5640     7.9800  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C4     1
+ATOM     69 N   N4   . CB7  A ?     2 .   -21.1720    15.0240     5.0190  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N4     1
+ATOM     70 O   O4   . CB7  A ?     2 .   -23.9590    10.2320     5.4460  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O4     1
+ATOM     71 C   C5   . CB7  A ?     2 .   -23.9830    14.4560     6.7560  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C5     1
+ATOM     72 N   N5   . CB7  A ?     2 .   -22.7430    11.9470     4.5200  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N5     1
+ATOM     73 O   O5   . CB7  A ?     2 .   -17.0150     9.6470     6.4760  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O5     1
+ATOM     74 C   C6   . CB7  A ?     2 .   -20.4870    14.2810     3.9670  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C6     1
+ATOM     75 N   N6   . CB7  A ?     2 .   -20.5410    12.8010     4.1580  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N6     1
+ATOM     76 O   O6   . CB7  A ?     2 .   -22.3140     7.5750     7.3570  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O6     1
+ATOM     77 C   C7   . CB7  A ?     2 .   -21.1530    17.7580     7.3510  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C7     1
+ATOM     78 N   N7   . CB7  A ?     2 .   -19.6520    10.7970     4.1250  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N7     1
+ATOM     79 O   O7   . CB7  A ?     2 .   -19.2600    16.8460     9.4370  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O7     1
+ATOM     80 C   C8   . CB7  A ?     2 .   -20.5260    15.8300     5.8990  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C8     1
+ATOM     81 N   N8   . CB7  A ?     2 .   -21.9100     9.8700     4.5190  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N8     1
+ATOM     82 O   O8   . CB7  A ?     2 .   -24.9290    15.2110    10.4090  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O8     1
+ATOM     83 C   C9   . CB7  A ?     2 .   -21.5880    11.9760     3.6180  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   C9     1
+ATOM     84 N   N9   . CB7  A ?     2 .   -20.9600     7.9100     5.5700  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   N9     1
+ATOM     85 O   O9   . CB7  A ?     2 .   -23.7300    13.0820    12.6020  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   O9     1
+ATOM     86 C   C10  . CB7  A ?     2 .   -22.9350    10.7010     4.9870  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C10     1
+ATOM     87 N   N10  . CB7  A ?     2 .   -18.7010     8.7690     5.1410  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N10     1
+ATOM     88 O   O10  . CB7  A ?     2 .   -18.1420    15.0130    12.1830  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  O10     1
+ATOM     89 C   C11  . CB7  A ?     2 .   -19.4180    12.0970     4.4310  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C11     1
+ATOM     90 N   N11  . CB7  A ?     2 .   -23.8040    16.7810     9.1770  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N11     1
+ATOM     91 O   O11  . CB7  A ?     2 .   -16.9010    11.4470    12.2870  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  O11     1
+ATOM     92 C   C12  . CB7  A ?     2 .   -21.0110    10.5360     3.6520  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C12     1
+ATOM     93 N   N12  . CB7  A ?     2 .   -21.3960    17.4560     8.7380  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N12     1
+ATOM     94 O   O12  . CB7  A ?     2 .   -22.3850     9.4210    12.8260  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  O12     1
+ATOM     95 C   C13  . CB7  A ?     2 .   -18.6280     9.7350     4.0580  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C13     1
+ATOM     96 N   N13  . CB7  A ?     2 .   -18.0020     7.5960     6.8780  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N13     1
+ATOM     97 O   O13  . CB7  A ?     2 .   -16.4850     9.1510     9.7060  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  O13     1
+ATOM     98 C   C14  . CB7  A ?     2 .   -21.9450     8.4320     4.6170  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C14     1
+ATOM     99 N   N14  . CB7  A ?     2 .   -20.2290     6.6780     7.2710  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N14     1
+ATOM    100 O   O14  . CB7  A ?     2 .   -21.8200     6.7970    10.5520  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  O14     1
+ATOM    101 C   C15  . CB7  A ?     2 .   -19.6350     7.5820     5.1270  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C15     1
+ATOM    102 N   N15  . CB7  A ?     2 .   -20.9640    17.1510    10.9370  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N15     1
+ATOM    103 C   C16  . CB7  A ?     2 .   -17.8500     8.7760     6.2370  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C16     1
+ATOM    104 N   N16  . CB7  A ?     2 .   -23.2960    16.5360    11.2950  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N16     1
+ATOM    105 C   C17  . CB7  A ?     2 .   -21.2520     7.4650     6.8070  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C17     1
+ATOM    106 N   N17  . CB7  A ?     2 .   -20.2380    15.7990    12.8030  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N17     1
+ATOM    107 C   C18  . CB7  A ?     2 .   -19.0640     6.7900     6.3390  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C18     1
+ATOM    108 N   N18  . CB7  A ?     2 .   -22.5060    14.9860    12.9820  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N18     1
+ATOM    109 C   C19  . CB7  A ?     2 .   -22.6420    17.7510     9.3960  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C19     1
+ATOM    110 N   N19  . CB7  A ?     2 .   -21.8020    13.0780    13.7830  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N19     1
+ATOM    111 C   C20  . CB7  A ?     2 .   -24.0930    16.0780    10.3150  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C20     1
+ATOM    112 N   N20  . CB7  A ?     2 .   -19.4360    13.8970    13.6940  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N20     1
+ATOM    113 C   C21  . CB7  A ?     2 .   -20.4230    17.0990     9.6770  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C21     1
+ATOM    114 N   N21  . CB7  A ?     2 .   -20.9730    10.8130    13.9410  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N21     1
+ATOM    115 C   C22  . CB7  A ?     2 .   -22.3770    17.5230    10.8450  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C22     1
+ATOM    116 N   N22  . CB7  A ?     2 .   -18.6620    11.6420    13.8090  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N22     1
+ATOM    117 C   C23  . CB7  A ?     2 .   -19.1760    14.9080    12.7820  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C23     1
+ATOM    118 N   N23  . CB7  A ?     2 .   -18.0200     9.6580    13.1140  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N23     1
+ATOM    119 C   C24  . CB7  A ?     2 .   -21.2970    15.3650    13.6790  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C24     1
+ATOM    120 N   N24  . CB7  A ?     2 .   -20.2680     8.8440    13.2950  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N24     1
+ATOM    121 C   C25  . CB7  A ?     2 .   -22.7580    13.6380    12.9990  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C25     1
+ATOM    122 N   N25  . CB7  A ?     2 .   -19.8400     7.0250    11.6840  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N25     1
+ATOM    123 C   C26  . CB7  A ?     2 .   -21.9450    11.8030    14.4420  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C26     1
+ATOM    124 N   N26  . CB7  A ?     2 .   -17.6650     8.0350    11.2890  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N26     1
+ATOM    125 C   C27  . CB7  A ?     2 .   -20.8120    14.0150    14.3150  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C27     1
+ATOM    126 N   N27  . CB7  A ?     2 .   -17.6480     7.2990     9.2440  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N27     1
+ATOM    127 C   C28  . CB7  A ?     2 .   -18.4070    13.0350    14.2240  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C28     1
+ATOM    128 N   N28  . CB7  A ?     2 .   -19.8360     6.2770     9.5730  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  N28     1
+ATOM    129 C   C29  . CB7  A ?     2 .   -21.3080     9.7110    13.2590  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C29     1
+ATOM    130 C   C30  . CB7  A ?     2 .   -19.6220    10.7370    14.4550  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C30     1
+ATOM    131 C   C31  . CB7  A ?     2 .   -17.8070    10.9720    12.9520  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C31     1
+ATOM    132 C   C32  . CB7  A ?     2 .   -17.1350     8.5900    12.5500  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C32     1
+ATOM    133 C   C33  . CB7  A ?     2 .   -20.3440     7.4100    13.0160  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C33     1
+ATOM    134 C   C34  . CB7  A ?     2 .   -19.1130     9.3670    14.0120  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C34     1
+ATOM    135 C   C35  . CB7  A ?     2 .   -20.6200     6.7480    10.5970  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C35     1
+ATOM    136 C   C36  . CB7  A ?     2 .   -18.4900     6.7520    11.3840  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C36     1
+ATOM    137 C   C37  . CB7  A ?     2 .   -17.2280     8.2710    10.0190  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C37     1
+ATOM    138 C   C38  . CB7  A ?     2 .   -18.4480     6.2440     9.9090  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C38     1
+ATOM    139 C   C39  . CB7  A ?     2 .   -20.1780    17.0950    12.1780  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C39     1
+ATOM    140 C   C40  . CB7  A ?     2 .   -23.4780    16.0850    12.6920  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C40     1
+ATOM    141 C   C41  . CB7  A ?     2 .   -20.3580     5.7280     8.3170  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C41     1
+ATOM    142 C   C42  . CB7  A ?     2 .   -17.1610     7.0990     7.9660  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  C42     1
+ATOM    143 H   H1   . CB7  A ?     2 .   -23.3080    17.2350     5.6090  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H1     1
+ATOM    144 H   H2   . CB7  A ?     2 .   -22.9680    15.5490     4.0150  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H2     1
+ATOM    145 H   H3   . CB7  A ?     2 .   -24.1280    13.3810     3.7500  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H3     1
+ATOM    146 H   H4   . CB7  A ?     2 .   -24.6160    12.5210     5.2350  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H4     1
+ATOM    147 H   H5   . CB7  A ?     2 .   -24.7940    17.5200     7.5060  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H5     1
+ATOM    148 H   H6   . CB7  A ?     2 .   -25.4600    16.0520     8.2990  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H6     1
+ATOM    149 H   H7   . CB7  A ?     2 .   -19.4380    14.5940     3.9210  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H7     1
+ATOM    150 H   H8   . CB7  A ?     2 .   -20.9540    14.5060     3.0010  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H8     1
+ATOM    151 H   H9   . CB7  A ?     2 .   -20.0860    17.9960     7.2760  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A   H9     1
+ATOM    152 H   H10  . CB7  A ?     2 .   -21.7270    18.6230     7.0000  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H10     1
+ATOM    153 H   H11  . CB7  A ?     2 .   -21.9020    12.3160     2.6250  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H11     1
+ATOM    154 H   H12  . CB7  A ?     2 .   -21.0620    10.0710     2.6610  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H12     1
+ATOM    155 H   H13  . CB7  A ?     2 .   -18.6540     9.3210     3.0440  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H13     1
+ATOM    156 H   H14  . CB7  A ?     2 .   -17.6670    10.2540     4.1420  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H14     1
+ATOM    157 H   H15  . CB7  A ?     2 .   -22.9200     8.0960     4.9880  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H15     1
+ATOM    158 H   H16  . CB7  A ?     2 .   -21.7070     8.0850     3.6050  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H16     1
+ATOM    159 H   H17  . CB7  A ?     2 .   -19.7010     7.1140     4.1380  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H17     1
+ATOM    160 H   H18  . CB7  A ?     2 .   -18.7220     5.7860     6.0620  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H18     1
+ATOM    161 H   H19  . CB7  A ?     2 .   -23.0070    18.7560     9.1550  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H19     1
+ATOM    162 H   H20  . CB7  A ?     2 .   -22.4440    18.4340    11.4500  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H20     1
+ATOM    163 H   H21  . CB7  A ?     2 .   -21.5440    16.1430    14.4100  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H21     1
+ATOM    164 H   H22  . CB7  A ?     2 .   -21.8060    11.8980    15.5250  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H22     1
+ATOM    165 H   H23  . CB7  A ?     2 .   -22.9650    11.4740    14.2160  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H23     1
+ATOM    166 H   H24  . CB7  A ?     2 .   -20.7770    14.0340    15.4110  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H24     1
+ATOM    167 H   H25  . CB7  A ?     2 .   -17.4090    13.1920    13.7990  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H25     1
+ATOM    168 H   H26  . CB7  A ?     2 .   -18.4200    13.0560    15.3200  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H26     1
+ATOM    169 H   H27  . CB7  A ?     2 .   -19.5190    10.8570    15.5400  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H27     1
+ATOM    170 H   H28  . CB7  A ?     2 .   -17.0420     7.7350    13.2300  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H28     1
+ATOM    171 H   H29  . CB7  A ?     2 .   -16.2350     9.1540    12.2800  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H29     1
+ATOM    172 H   H30  . CB7  A ?     2 .   -21.4160     7.1920    13.0750  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H30     1
+ATOM    173 H   H31  . CB7  A ?     2 .   -19.7510     6.8500    13.7480  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H31     1
+ATOM    174 H   H32  . CB7  A ?     2 .   -18.8250     8.7590    14.8770  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H32     1
+ATOM    175 H   H33  . CB7  A ?     2 .   -18.0280     6.0910    12.1260  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H33     1
+ATOM    176 H   H34  . CB7  A ?     2 .   -17.9620     5.2640     9.8400  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H34     1
+ATOM    177 H   H35  . CB7  A ?     2 .   -19.1340    17.2940    11.9090  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H35     1
+ATOM    178 H   H36  . CB7  A ?     2 .   -20.5070    17.8370    12.9140  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H36     1
+ATOM    179 H   H37  . CB7  A ?     2 .   -23.2430    16.9640    13.3040  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H37     1
+ATOM    180 H   H38  . CB7  A ?     2 .   -24.4980    15.7270    12.8750  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H38     1
+ATOM    181 H   H39  . CB7  A ?     2 .   -21.4160     5.4510     8.3800  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H39     1
+ATOM    182 H   H40  . CB7  A ?     2 .   -19.7530     4.8370     8.1140  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H40     1
+ATOM    183 H   H41  . CB7  A ?     2 .   -17.0030     6.0290     7.7850  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H41     1
+ATOM    184 H   H42  . CB7  A ?     2 .   -16.1780     7.5740     7.8750  0.0  0.0  ?  ?  ?  ?  ?  .      2  CB7 A  H42     1

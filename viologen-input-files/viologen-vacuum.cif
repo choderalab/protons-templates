@@ -1,0 +1,159 @@
+data_cell
+# Created with OpenMM 7.2.2, 2019-04-01
+#
+loop_
+_struct_conn.id
+_struct_conn.conn_type_id
+_struct_conn.ptnr1_label_asym_id
+_struct_conn.ptnr1_label_comp_id
+_struct_conn.ptnr1_label_seq_id
+_struct_conn.ptnr1_label_atom_id
+_struct_conn.ptnr2_label_asym_id
+_struct_conn.ptnr2_label_comp_id
+_struct_conn.ptnr2_label_seq_id
+_struct_conn.ptnr2_label_atom_id
+bond1 covale A VIO      1 O1   A VIO      1 H29 
+bond2 covale A VIO      1 C4   A VIO      1 H1  
+bond3 covale A VIO      1 C4   A VIO      1 H2  
+bond4 covale A VIO      1 C5   A VIO      1 H4  
+bond5 covale A VIO      1 C5   A VIO      1 H3  
+bond6 covale A VIO      1 C6   A VIO      1 H6  
+bond7 covale A VIO      1 C6   A VIO      1 H5  
+bond8 covale A VIO      1 C7   A VIO      1 H7  
+bond9 covale A VIO      1 C7   A VIO      1 H8  
+bond10 covale A VIO      1 C8   A VIO      1 H10 
+bond11 covale A VIO      1 C8   A VIO      1 H9  
+bond12 covale A VIO      1 C10  A VIO      1 H11 
+bond13 covale A VIO      1 C11  A VIO      1 H12 
+bond14 covale A VIO      1 C12  A VIO      1 H13 
+bond15 covale A VIO      1 C13  A VIO      1 H14 
+bond16 covale A VIO      1 C16  A VIO      1 H15 
+bond17 covale A VIO      1 C17  A VIO      1 H16 
+bond18 covale A VIO      1 C19  A VIO      1 H17 
+bond19 covale A VIO      1 C20  A VIO      1 H18 
+bond20 covale A VIO      1 C21  A VIO      1 H19 
+bond21 covale A VIO      1 C21  A VIO      1 H20 
+bond22 covale A VIO      1 C22  A VIO      1 H22 
+bond23 covale A VIO      1 C22  A VIO      1 H21 
+bond24 covale A VIO      1 C23  A VIO      1 H23 
+bond25 covale A VIO      1 C23  A VIO      1 H24 
+bond26 covale A VIO      1 C24  A VIO      1 H26 
+bond27 covale A VIO      1 C24  A VIO      1 H25 
+bond28 covale A VIO      1 C25  A VIO      1 H27 
+bond29 covale A VIO      1 C25  A VIO      1 H28 
+bond30 covale A VIO      1 O28  A VIO      1 H30 
+bond31 covale A VIO      1 O1   A VIO      1 C2  
+bond32 covale A VIO      1 C2   A VIO      1 O3  
+bond33 covale A VIO      1 C2   A VIO      1 C4  
+bond34 covale A VIO      1 C4   A VIO      1 C5  
+bond35 covale A VIO      1 C5   A VIO      1 C6  
+bond36 covale A VIO      1 C6   A VIO      1 C7  
+bond37 covale A VIO      1 C7   A VIO      1 C8  
+bond38 covale A VIO      1 C8   A VIO      1 N9  
+bond39 covale A VIO      1 N9   A VIO      1 C10 
+bond40 covale A VIO      1 N9   A VIO      1 C12 
+bond41 covale A VIO      1 C10  A VIO      1 C11 
+bond42 covale A VIO      1 C11  A VIO      1 C14 
+bond43 covale A VIO      1 C12  A VIO      1 C13 
+bond44 covale A VIO      1 C13  A VIO      1 C14 
+bond45 covale A VIO      1 C14  A VIO      1 C15 
+bond46 covale A VIO      1 C15  A VIO      1 C16 
+bond47 covale A VIO      1 C15  A VIO      1 C20 
+bond48 covale A VIO      1 C16  A VIO      1 C17 
+bond49 covale A VIO      1 C17  A VIO      1 N18 
+bond50 covale A VIO      1 N18  A VIO      1 C19 
+bond51 covale A VIO      1 N18  A VIO      1 C21 
+bond52 covale A VIO      1 C19  A VIO      1 C20 
+bond53 covale A VIO      1 C21  A VIO      1 C22 
+bond54 covale A VIO      1 C22  A VIO      1 C23 
+bond55 covale A VIO      1 C23  A VIO      1 C24 
+bond56 covale A VIO      1 C24  A VIO      1 C25 
+bond57 covale A VIO      1 C25  A VIO      1 C26 
+bond58 covale A VIO      1 C26  A VIO      1 O27 
+bond59 covale A VIO      1 C26  A VIO      1 O28 
+#
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_alt_id
+_atom_site.label_comp_id
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.label_seq_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.Cartn_x_esd
+_atom_site.Cartn_y_esd
+_atom_site.Cartn_z_esd
+_atom_site.occupancy_esd
+_atom_site.B_iso_or_equiv_esd
+_atom_site.pdbx_formal_charge
+_atom_site.auth_seq_id
+_atom_site.auth_comp_id
+_atom_site.auth_asym_id
+_atom_site.auth_atom_id
+_atom_site.pdbx_PDB_model_num
+ATOM      1 O   O1   . VIO  A ?     1 .   -31.9260    12.6290    12.1910  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   O1     1
+ATOM      2 H   H29  . VIO  A ?     1 .   -32.4802    13.3935    11.9249  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H29     1
+ATOM      3 C   C2   . VIO  A ?     1 .   -31.0750    12.1370    12.8460  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C2     1
+ATOM      4 O   O3   . VIO  A ?     1 .   -30.9850    12.0720    14.0370  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   O3     1
+ATOM      5 C   C4   . VIO  A ?     1 .   -30.0670    11.2690    12.1000  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C4     1
+ATOM      6 H   H1   . VIO  A ?     1 .   -30.4853    11.0338    11.1134  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H1     1
+ATOM      7 H   H2   . VIO  A ?     1 .   -29.9626    10.3208    12.6412  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H2     1
+ATOM      8 C   C5   . VIO  A ?     1 .   -28.6600    11.9650    11.9380  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C5     1
+ATOM      9 H   H4   . VIO  A ?     1 .   -28.2017    12.0738    12.9302  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H4     1
+ATOM     10 H   H3   . VIO  A ?     1 .   -28.7771    12.9714    11.5146  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H3     1
+ATOM     11 C   C6   . VIO  A ?     1 .   -27.7760    11.0940    11.0180  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C6     1
+ATOM     12 H   H6   . VIO  A ?     1 .   -27.9462    10.0351    11.2575  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H6     1
+ATOM     13 H   H5   . VIO  A ?     1 .   -28.1098    11.2388     9.9815  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H5     1
+ATOM     14 C   C7   . VIO  A ?     1 .   -26.2830    11.3850    11.1520  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C7     1
+ATOM     15 H   H7   . VIO  A ?     1 .   -25.9408    11.1364    12.1660  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H7     1
+ATOM     16 H   H8   . VIO  A ?     1 .   -26.1432    12.4645    11.0270  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H8     1
+ATOM     17 C   C8   . VIO  A ?     1 .   -25.5040    10.5690    10.1170  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   C8     1
+ATOM     18 H   H10  . VIO  A ?     1 .   -25.5471     9.5094    10.4026  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H10     1
+ATOM     19 H   H9   . VIO  A ?     1 .   -26.0041    10.6570     9.1424  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   H9     1
+ATOM     20 N   N9   . VIO  A ?     1 .   -24.1310    10.9830     9.9370  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A   N9     1
+ATOM     21 C   C10  . VIO  A ?     1 .   -23.0920    10.0790    10.0530  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C10     1
+ATOM     22 H   H11  . VIO  A ?     1 .   -23.3630     9.0636    10.3229  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H11     1
+ATOM     23 C   C11  . VIO  A ?     1 .   -21.7680    10.4950     9.8670  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C11     1
+ATOM     24 H   H12  . VIO  A ?     1 .   -20.9964     9.7565    10.0220  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H12     1
+ATOM     25 C   C12  . VIO  A ?     1 .   -23.8840    12.3230     9.6320  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C12     1
+ATOM     26 H   H13  . VIO  A ?     1 .   -24.7465    12.9741     9.5389  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H13     1
+ATOM     27 C   C13  . VIO  A ?     1 .   -22.6450    12.7470     9.3800  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C13     1
+ATOM     28 H   H14  . VIO  A ?     1 .   -22.5418    13.7863     9.1028  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H14     1
+ATOM     29 C   C14  . VIO  A ?     1 .   -21.4920    11.8660     9.4890  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C14     1
+ATOM     30 C   C15  . VIO  A ?     1 .   -20.1850    12.2850     9.2480  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C15     1
+ATOM     31 C   C16  . VIO  A ?     1 .   -19.8830    13.6290     8.9170  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C16     1
+ATOM     32 H   H15  . VIO  A ?     1 .   -20.6498    14.3863     8.8499  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H15     1
+ATOM     33 C   C17  . VIO  A ?     1 .   -18.6050    14.0200     8.5540  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C17     1
+ATOM     34 H   H16  . VIO  A ?     1 .   -18.3414    15.0215     8.2253  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H16     1
+ATOM     35 N   N18  . VIO  A ?     1 .   -17.5710    13.1670     8.8930  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  N18     1
+ATOM     36 C   C19  . VIO  A ?     1 .   -17.7720    11.7790     8.9620  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C19     1
+ATOM     37 H   H17  . VIO  A ?     1 .   -16.9026    11.1310     8.9223  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H17     1
+ATOM     38 C   C20  . VIO  A ?     1 .   -19.0800    11.3370     9.1970  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C20     1
+ATOM     39 H   H18  . VIO  A ?     1 .   -19.2159    10.2729     9.3152  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H18     1
+ATOM     40 C   C21  . VIO  A ?     1 .   -16.2140    13.6270     8.7200  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C21     1
+ATOM     41 H   H19  . VIO  A ?     1 .   -16.1345    13.9658     7.6776  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H19     1
+ATOM     42 H   H20  . VIO  A ?     1 .   -15.5081    12.7929     8.8290  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H20     1
+ATOM     43 C   C22  . VIO  A ?     1 .   -15.7690    14.7250     9.6280  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C22     1
+ATOM     44 H   H22  . VIO  A ?     1 .   -15.5496    14.3453    10.6352  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H22     1
+ATOM     45 H   H21  . VIO  A ?     1 .   -16.5767    15.4610     9.7392  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H21     1
+ATOM     46 C   C23  . VIO  A ?     1 .   -14.5390    15.4170     9.0310  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C23     1
+ATOM     47 H   H23  . VIO  A ?     1 .   -14.4922    15.3177     7.9381  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H23     1
+ATOM     48 H   H24  . VIO  A ?     1 .   -13.6303    14.9452     9.4301  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H24     1
+ATOM     49 C   C24  . VIO  A ?     1 .   -14.5480    16.9100     9.3620  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C24     1
+ATOM     50 H   H26  . VIO  A ?     1 .   -15.3397    17.4262     8.8027  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H26     1
+ATOM     51 H   H25  . VIO  A ?     1 .   -14.7388    17.0677    10.4326  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H25     1
+ATOM     52 C   C25  . VIO  A ?     1 .   -13.1640    17.5070     8.9990  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C25     1
+ATOM     53 H   H27  . VIO  A ?     1 .   -12.3787    17.0469     9.6102  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H27     1
+ATOM     54 H   H28  . VIO  A ?     1 .   -12.9237    17.2950     7.9497  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H28     1
+ATOM     55 C   C26  . VIO  A ?     1 .   -13.0850    18.9950     9.2070  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  C26     1
+ATOM     56 O   O27  . VIO  A ?     1 .   -12.9880    19.6880     8.2190  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  O27     1
+ATOM     57 O   O28  . VIO  A ?     1 .   -13.2100    19.3820    10.3730  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  O28     1
+ATOM     58 H   H30  . VIO  A ?     1 .   -13.0330    19.7736    11.2549  0.0  0.0  ?  ?  ?  ?  ?  .      1  VIO A  H30     1
